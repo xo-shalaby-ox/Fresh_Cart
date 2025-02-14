@@ -1,11 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { CartContext } from "../../Context/CartContext";
 
 export default function AllOrders() {
   const [orders, setOrders] = useState([]);
   const [userOrders, setUserOrders] = useState([]);
-  const userId = localStorage.getItem("CartOwnerID");
+
+  let { userID } = useContext(CartContext);
+  userID = localStorage.getItem("CartOwnerID");
 
   const headers = {
     token: localStorage.getItem("userToken"),
@@ -19,7 +22,7 @@ export default function AllOrders() {
         const allOrders = res.data.data;
         setOrders(allOrders);
         const filteredOrders = allOrders.filter(
-          (order) => order.user._id === userId
+          (order) => order.user._id === userID
         );
         setUserOrders(filteredOrders);
       })
@@ -31,7 +34,7 @@ export default function AllOrders() {
 
   useEffect(() => {
     getAllOrders();
-  }, []);
+  }, [userID]);
 
   return (
     <>

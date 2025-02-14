@@ -10,6 +10,7 @@ export default function CartContextProvider(props) {
   const [Loading, setLoading] = useState(false);
   const [currentId, setCurrentId] = useState(0);
   const [count, setCount] = useState(0);
+  const [userID, setUserID] = useState(0);
   let headers = {
     token: localStorage.getItem("userToken"),
   };
@@ -29,6 +30,7 @@ export default function CartContextProvider(props) {
         headers,
       })
       .then((res) => {
+        console.log(res.data);
         setCartId(res.data.data._id);
         return res;
       })
@@ -94,7 +96,12 @@ export default function CartContextProvider(props) {
   async function getCartItem() {
     let response = await getLoggedCart();
     if (response.data.status == "success") {
-      localStorage.setItem("CartOwnerID", response.data.data.cartOwner);
+      const cartOwnerID = response.data.data.cartOwner;
+
+      if (!localStorage.getItem("CartOwnerID")) {
+        localStorage.setItem("CartOwnerID", cartOwnerID);
+      }
+      setUserID(cartOwnerID);
       setCartDetails(response.data.data);
       setCount(response.data.numOfCartItems);
     } else {
@@ -134,6 +141,7 @@ export default function CartContextProvider(props) {
         currentId,
         count,
         cartId,
+        userID,
       }}
     >
       {props.children}
