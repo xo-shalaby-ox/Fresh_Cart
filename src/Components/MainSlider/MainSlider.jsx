@@ -1,5 +1,5 @@
 import React from "react";
-import imageSlide1 from "../../Assets/Images/slider-image-1.jpeg";
+// import imageSlide1 from "../../Assets/Images/slider-image-1.jpeg";
 import imageSlide2 from "../../assets/images/slider-image-2.jpeg";
 import imageSlide3 from "../../Assets/Images/slider-image-3.jpeg";
 import imageSlide4 from "../../Assets/Images/grocery-banner-2.jpeg";
@@ -24,7 +24,7 @@ export default function MainSlider() {
           <Slider {...settings}>
             <div>
               <img
-                src={imageSlide1}
+                src={imageSlide2}
                 alt="slide1"
                 className="w-full h-[400px] object-cover"
               />
