@@ -1,5 +1,4 @@
 import React from "react";
-// import imageSlide1 from "../../Assets/Images/slider-image-1.jpeg";
 import imageSlide2 from "../../assets/images/slider-image-2.jpeg";
 import imageSlide3 from "../../Assets/Images/slider-image-3.jpeg";
 import imageSlide4 from "../../Assets/Images/grocery-banner-2.jpeg";
