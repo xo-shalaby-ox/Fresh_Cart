@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, Links, Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 import { userContext } from "../../Context/UserContext";
 import { wishlistContext } from "../../Context/WishlistContext";
@@ -40,13 +40,13 @@ export default function Layout() {
                 </div>
               </Link>
             </div>
-            <div className="orders-icon flex justify-center items-center relative w-full">
+            {/* <div className="orders-icon flex justify-center items-center relative w-full">
               <Link to="allorders">
                 <div className="relative orders-icon flex justify-center items-center w-full">
                   <i className="fa-solid fa-cart-flatbed fa-bounce text-lg"></i>
                 </div>
               </Link>
-            </div>
+            </div> */}
           </div>
         ) : null}
         <SocialInfo />
