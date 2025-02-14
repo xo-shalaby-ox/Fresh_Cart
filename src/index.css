@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.row {
+  @apply flex flex-wrap py-5 px-3;
+}
+
+/* loader spinner */
+.sk-cube-grid {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 170px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #36d336;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+/* loader spinner */
+
+/* Start Empty Cart Loader */
+.loader {
+  --ANIMATION-DELAY-MULTIPLIER: 70ms;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.loader p {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1rem;
+  animation-delay: 0s;
+  transform: translateY(4rem);
+  font-size: 30px;
+  font-weight: bold;
+  animation: hideAndSeek 1s alternate infinite cubic-bezier(0.86, 0, 0.07, 1);
+}
+.loader .c {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 0);
+}
+.loader .a {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 1);
+}
+.loader .r {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 2);
+}
+.loader .t {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 3);
+}
+.loader .e {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 4);
+}
+.loader .m {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 5);
+}
+.loader .p {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 6);
+}
+.loader .t {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 7);
+}
+.loader .y {
+  animation-delay: calc(var(--ANIMATION-DELAY-MULTIPLIER) * 8);
+}
+.letter {
+  width: fit-content;
+  height: 3rem;
+}
+.i {
+  margin-inline: 5px;
+}
+@keyframes hideAndSeek {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    transform: translateY(0rem);
+  }
+}
+/* End Empty Cart Loader */
+.cart-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  top: 40px;
+  background-color: #fff;
+}
+.orders-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  top: -12px;
+  background-color: #fff;
+}
+.social_media {
+  left: -65px;
+  transition: 0.5s;
+}
+.social_media.active {
+  left: 0;
+}
+.settingPass-icon {
+  right: -257px;
+  transition: 0.7s;
+}
+.settingPass-icon.active {
+  right: 0px;
+}
+.menu-bar {
+  display: none;
+}
+.category-caption-text h3 {
+  width: fit-content;
+}
+.category-caption-text h3::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: green;
+  bottom: 0;
+  left: 0;
+}
+.auth-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 15px;
+}
+
+@media screen and (max-width: 992px) {
+  .right_menu {
+    position: relative;
+    display: none;
+  }
+  .menu-bar {
+    display: block;
+    cursor: pointer;
+  }
+  .right_menu.active {
+    width: 100%;
+    background-color: rgba(180, 240, 180, 0.897);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    border-radius: 0 0 8px 8px;
+  }
+  .nav-list {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  .auth-btn {
+    flex-direction: column;
+    row-gap: 15px;
+  }
+}
