@@ -1,8 +1,9 @@
 import React from "react";
-import imageSlide2 from "../../assets/images/slider-image-2.jpeg";
-import imageSlide3 from "../../Assets/Images/slider-image-3.jpeg";
-import imageSlide4 from "../../Assets/Images/grocery-banner-2.jpeg";
-import imageSlide5 from "../../Assets/Images/slider-2.jpeg";
+import sliderImageOne from "../../assets/sliderImageOne.jpeg";
+import sliderImageTwo from "../../assets/sliderImageTwo.jpeg";
+import mainSliderOne from "../../assets/mainSliderOne.jpeg";
+import mainSliderTwo from "../../assets/mainSliderTwo.png";
+import mainSliderThree from "../../assets//mainSliderThree.jpeg";
 import Slider from "react-slick";
 
 export default function MainSlider() {
@@ -23,22 +24,22 @@ export default function MainSlider() {
           <Slider {...settings}>
             <div>
               <img
-                src={imageSlide2}
-                alt="slide1"
+                src={mainSliderOne}
+                alt="mainSliderOne"
                 className="w-full h-[400px] object-cover"
               />
             </div>
             <div>
               <img
-                src={imageSlide4}
-                alt="slide2"
+                src={mainSliderTwo}
+                alt="mainSliderTwo"
                 className="w-full h-[400px] object-cover"
               />
             </div>
             <div>
               <img
-                src={imageSlide5}
-                alt="slide3"
+                src={mainSliderThree}
+                alt="mainSliderThree"
                 className="w-full h-[400px] object-cover"
               />
             </div>
@@ -46,13 +47,13 @@ export default function MainSlider() {
         </div>
         <div className="w-1/4">
           <img
-            src={imageSlide2}
-            alt="slide1"
+            src={sliderImageOne}
+            alt="sliderImageOne"
             className="w-full h-[200px] object-cover"
           />
           <img
-            src={imageSlide3}
-            alt="slide2"
+            src={sliderImageTwo}
+            alt="sliderImageTwo"
             className="w-full h-[200px] object-cover"
           />
         </div>
