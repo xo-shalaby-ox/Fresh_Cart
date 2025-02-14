@@ -13,9 +13,9 @@ export default function AllOrders() {
 
   function getAllOrders() {
     axios
-      .get(`https://ecommerce.routemisr.com/api/v1/orders/`, { headers })
+      .get(`https://ecommerce.routemisr.com/api/v1/orders`, { headers })
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         const allOrders = res.data.data;
         setOrders(allOrders);
         const filteredOrders = allOrders.filter(
@@ -86,6 +86,17 @@ export default function AllOrders() {
             <div className="sk-cube sk-cube7"></div>
             <div className="sk-cube sk-cube8"></div>
             <div className="sk-cube sk-cube9"></div>
+          </div>
+          <div className="loader">
+            <p className="c">N</p>
+            <p className="a">O</p>
+            <p className="r">-</p>
+            <p className="t">O</p>
+            <p className="e">R</p>
+            <p className="M">D</p>
+            <p className="p">E</p>
+            <p className="t">R</p>
+            <p className="y">S</p>
           </div>
         </>
       )}
