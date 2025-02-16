@@ -1,7 +1,6 @@
 import { useFormik } from "formik";
 import { useContext, useEffect } from "react";
 import { CartContext } from "../../Context/CartContext";
-import toast from "react-hot-toast";
 
 export default function CheckOut() {
   let { checkOut, cartId } = useContext(CartContext);
