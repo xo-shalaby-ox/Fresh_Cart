@@ -15,42 +15,9 @@ export default function CheckOut() {
     onSubmit: () => handleCheckOut(cartId, `${window.location.origin}`),
   });
 
-  // async function handleCheckOut(cartId, url) {
-  //   let { data } = await checkOut(cartId, url, formik.values);
-  //   window.location.href = data.session.url;
-  //   console.log(data);
-  //   // console.log(window.location.href);
-  // }
   async function handleCheckOut(cartId, url) {
-    try {
-      let { data } = await checkOut(cartId, url, formik.values);
-
-      // Redirect to the checkout session URL (assuming this is the next step in your flow)
-      const checkoutUrl = data.session.url;
-      if (checkoutUrl) {
-        window.location.href = checkoutUrl; // This will redirect to the checkout page
-      } else {
-        console.error("Checkout URL not found in response data.");
-      }
-
-      // Now check the environment and redirect accordingly
-      redirectBasedOnOrigin();
-    } catch (error) {
-      console.error("Error during checkout:", error);
-      toast.error("Checkout failed. Please try again.");
-    }
-  }
-
-  // Helper function for redirection based on environment
-  function redirectBasedOnOrigin() {
-    const currentOrigin = window.location.origin;
-
-    if (currentOrigin === "http://localhost:517") {
-      window.location.href = "http://localhost:5173/allorders";
-    } else if (currentOrigin === "https://fresh-cart-beta-nine.vercel.app") {
-      window.location.href =
-        "https://fresh-cart-beta-nine.vercel.app/allorders";
-    }
+    let { data } = await checkOut(cartId, url, formik.values);
+    window.location.href = data.session.url;
   }
 
   return (
