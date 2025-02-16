@@ -11,7 +11,7 @@ export default function CheckOut() {
       phone: "",
       city: "",
     },
-    onSubmit: () => handleCheckOut(cartId, `http://localhost:5173`),
+    onSubmit: () => handleCheckOut(cartId, `${window.location.origin}`),
   });
 
   async function handleCheckOut(cartId, url) {

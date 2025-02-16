@@ -33,6 +33,7 @@ export default function AllOrders() {
   }
 
   useEffect(() => {
+    console.log(window.location.origin);
     getAllOrders();
   }, [userID]);
 
