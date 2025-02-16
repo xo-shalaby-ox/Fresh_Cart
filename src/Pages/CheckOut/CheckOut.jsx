@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CartContext } from "../../Context/CartContext";
+import toast from "react-hot-toast";
 
 export default function CheckOut() {
   let { checkOut, cartId } = useContext(CartContext);
@@ -14,9 +15,28 @@ export default function CheckOut() {
     onSubmit: () => handleCheckOut(cartId, `${window.location.origin}`),
   });
 
+  // async function handleCheckOut(cartId, url) {
+  //   let { data } = await checkOut(cartId, url, formik.values);
+  //   window.location.href = data.session.url;
+  //   console.log(data);
+  //   // console.log(window.location.href);
+  // }
   async function handleCheckOut(cartId, url) {
-    let { data } = await checkOut(cartId, url, formik.values);
-    window.location.href = data.session.url;
+    try {
+      let { data } = await checkOut(cartId, url, formik.values);
+
+      // Redirect the user to the checkout session URL
+      const checkoutUrl = data.session.url;
+      if (checkoutUrl) {
+        window.location.href = checkoutUrl; // This will redirect to the checkout page
+      } else {
+        console.error("Checkout URL not found in response data.");
+        toast.error("Error");
+      }
+    } catch (error) {
+      console.error("Error during checkout:", error);
+      toast.error("Checkout failed. Please try again.");
+    }
   }
 
   return (
