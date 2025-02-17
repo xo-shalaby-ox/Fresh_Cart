@@ -18,7 +18,6 @@ export default function AllOrders() {
     axios
       .get(`https://ecommerce.routemisr.com/api/v1/orders`, { headers })
       .then((res) => {
-        console.log(res);
         const allOrders = res.data.data;
         setOrders(allOrders);
         const filteredOrders = allOrders.filter(
@@ -27,7 +26,6 @@ export default function AllOrders() {
         setUserOrders(filteredOrders);
       })
       .catch((err) => {
-        console.log(err);
         toast.error("Error to get Your Orders ..");
       });
   }

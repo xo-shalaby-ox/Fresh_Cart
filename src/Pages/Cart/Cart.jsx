@@ -23,7 +23,6 @@ export default function Cart() {
     setDelCurrentID(id);
     setDelLoading(true);
     let response = await deleteProductFromCart(id);
-    console.log(response);
     if (response.data.status == "success") {
       setCartDetails(response.data.data);
       toast.success("Product Deleted Successfully");
@@ -36,7 +35,6 @@ export default function Cart() {
   }
   async function clearCart() {
     let response = await clearCartProducts();
-    console.log(response);
     if (response.data.message == "success") {
       setCartDetails(response.data.data);
       toast.success("Cart Cleared Successfully");

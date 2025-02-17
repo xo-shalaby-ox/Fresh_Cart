@@ -16,7 +16,6 @@ export default function Login() {
     axios
       .post(`https://ecommerce.routemisr.com/api/v1/auth/signin`, values)
       .then((res) => {
-        console.log(res);
         setIsLoading(false);
         if (res.data.message === "success") {
           toast.success(res.data.message);

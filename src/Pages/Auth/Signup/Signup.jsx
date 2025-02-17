@@ -28,7 +28,6 @@ export default function Signup() {
       .catch((res) => {
         setIsLoading(false);
         toast.error("Account Already Exist ..!");
-        // console.log(res.response.data.message);
       });
   }
 
